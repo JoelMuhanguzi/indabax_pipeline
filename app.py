@@ -290,7 +290,7 @@ with st.sidebar:
 
     st.markdown("#### Built by")
     st.markdown("""
-    **Joel Muhanguzi**  
+    **Joel Tibabwetiza Muhanguzi**  
     Embedded & Machine Learning Engineer  
     [Sunbird AI](https://sunbird.ai) · Kampala, Uganda  
     """)
