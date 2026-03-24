@@ -257,7 +257,7 @@ with st.sidebar:
     st.markdown("#### Built by")
     st.markdown("""
     **Joel Muhanguzi**  
-    Embedded & ML Engineer  
+    Embedded & Machine Learning Engineer  
     [Sunbird AI](https://sunbird.ai) · Kampala, Uganda  
     """)
 
@@ -265,7 +265,7 @@ with st.sidebar:
 
     st.markdown("#### Presented at")
     st.markdown("""
-    **IndabaX 2026**  
+    **IndabaX 2026 Uganda**  
     *MLOps Pipelines: Data Collection to Model Deployment*  
     """)
     if wandb_enabled:
