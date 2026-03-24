@@ -235,11 +235,39 @@ if uploaded_file:
 else:
     st.info("Upload an ultrasound image above to get a prediction.")
 
+# with st.sidebar:
+#     st.markdown("### About")
+#     st.markdown("**Model:** MobileNetV2 (fine-tuned)  \n**Dataset:** Breast Ultrasound Images  \n**Classes:** Normal · Benign · Malignant  \n**Tracking:** Weights & Biases")
+#     st.markdown("---")
+#     st.markdown("Built as part of an MLOps pipeline tutorial.")
 with st.sidebar:
-    st.markdown("### About")
-    st.markdown("**Model:** MobileNetV2 (fine-tuned)  \n**Dataset:** Breast Ultrasound Images  \n**Classes:** Normal · Benign · Malignant  \n**Tracking:** Weights & Biases")
+    st.markdown("### 🩺 Breast Ultrasound Classifier")
     st.markdown("---")
-    st.markdown("Built as part of an MLOps pipeline tutorial.")
+
+    st.markdown("#### About the Model")
+    st.markdown("""
+    **Model:** MobileNetV2 (fine-tuned)  
+    **Dataset:** Breast Ultrasound Images  
+    **Classes:** Normal · Benign · Malignant  
+    **Tracking:** Weights & Biases  
+    """)
+
+    st.markdown("---")
+
+    st.markdown("#### Built by")
+    st.markdown("""
+    **Joel Muhanguzi**  
+    Embedded & ML Engineer  
+    [Sunbird AI](https://sunbird.ai) · Kampala, Uganda  
+    """)
+
+    st.markdown("---")
+
+    st.markdown("#### Presented at")
+    st.markdown("""
+    **IndabaX 2026**  
+    *MLOps Pipelines: Data Collection to Model Deployment*  
+    """)
     if wandb_enabled:
         st.success("📊 Inference logging active")
     else:
