@@ -69,7 +69,7 @@ IMG_SIZE    = 128
 MODEL_PATH  = "mobilenetv2_ultrasound.pt"
 
 # W&B settings — update these to match your project
-WANDB_ENTITY  = "YOUR_WANDB_USERNAME"   # ← replace with your wandb username
+WANDB_ENTITY  = "tibajoel90"   # ← replace with your wandb username
 WANDB_PROJECT = "breast-ultrasound-classification"
 WANDB_ARTIFACT = "ultrasound-model:latest"
 
