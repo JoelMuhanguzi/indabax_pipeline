@@ -231,6 +231,40 @@ if uploaded_file:
             st.markdown(f'<div class="confidence-bar" style="width:{prob*100:.1f}%; background:{bar_colors[name]}"></div>', unsafe_allow_html=True)
 
     st.markdown('<div class="disclaimer">⚠️ <b>Research use only.</b> This tool is a demonstration of an MLOps pipeline and is not intended for clinical diagnosis. Always consult a qualified medical professional.</div>', unsafe_allow_html=True)
+    st.markdown("---")
+    st.markdown("#### Was this prediction correct?")
+
+    col_yes, col_no = st.columns(2)
+
+    with col_yes:
+        if st.button("✅ Yes, correct"):
+            if wandb_enabled:
+                wandb.log({
+                    "feedback":  "correct",
+                    "prediction": label,
+                    "confidence": confidence
+                })
+            st.success("Thanks for the feedback!")
+
+    with col_no:
+        if st.button("❌ No, incorrect"):
+            st.session_state["show_correction"] = True
+
+    if st.session_state.get("show_correction"):
+        correct_label = st.selectbox(
+            "What is the correct class?",
+            [l for l in LABEL_NAMES if l != label]
+        )
+        if st.button("Submit correction"):
+            if wandb_enabled:
+                wandb.log({
+                    "feedback":       "wrong",
+                    "predicted":      label,
+                    "actual":         correct_label,
+                    "confidence":     confidence
+                })
+            st.session_state["show_correction"] = False
+            st.success("Correction recorded — thank you!")
 
 else:
     st.info("Upload an ultrasound image above to get a prediction.")
